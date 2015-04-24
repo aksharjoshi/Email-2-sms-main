@@ -5,11 +5,9 @@ import java.util.*;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-
 import com.twilio.sdk.*; 
 import com.twilio.sdk.resource.factory.*; 
 import com.twilio.sdk.resource.instance.*; 
-import com.twilio.sdk.resource.list.*; 
 
 public class TwilioTest { 
 // Find your Account Sid and Token at twilio.com/user/account 
@@ -28,5 +26,5 @@ public static void main(String[]args) throws TwilioRestException {
 	 MessageFactory messageFactory = client.getAccount().getMessageFactory(); 
 	 Message message = messageFactory.create(params); 
 	 System.out.println(message.getSid()); 
-} 
+	} 
 }
