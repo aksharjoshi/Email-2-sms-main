@@ -38,7 +38,7 @@ public class DatabaseConnection {
 		String result = "";
 		int rowcount;
 		try {
-			String query = "Insert into Customer (firstname, lastname, emailid, password) values ('" + firstname + "', '" + lastname + "', '"+emailid+"', '"+pwd+"')";
+			String query = "Insert into Customer (firstname, lastname, username, password) values ('" + firstname + "', '" + lastname + "', '"+emailid+"', '"+pwd+"')";
 			rowcount=stmt.executeUpdate(query);
 			if(rowcount > 0){
 				result="true";
@@ -62,10 +62,10 @@ public class DatabaseConnection {
 			String query = "select * from client_master where username='"+ username + "' and password='"+password+"'";
 			rs = stmt.executeQuery(query);
 			if (rs.next()) {
-				firstname = rs.getString("first_name");
-				lastname = rs.getString("last_name");
-				email = rs.getString("email_id");
-				userunkid = rs.getInt("user_id");
+				firstname = rs.getString("firstname");
+				lastname = rs.getString("lastname");
+				email = rs.getString("username");
+				userunkid = rs.getInt("clientunkid");
 				
 				clientObj = new Client(firstname, lastname, email, userunkid);
 				System.out.println("Fetch Successfully for login");
